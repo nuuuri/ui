@@ -1,4 +1,4 @@
-require("@rushstack/eslint-config/patch/modern-module-resolution");
+require('@rushstack/eslint-config/patch/modern-module-resolution');
 
 module.exports = {
   env: {
@@ -7,7 +7,7 @@ module.exports = {
     es2021: true,
   },
 
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     // ecmaVersion: 12,
     // ecmaFeatures: {
@@ -19,45 +19,49 @@ module.exports = {
 
   settings: {
     react: {
-      version: "detect", // 사용자가 설치한 버전을 자동으로 선택
+      version: 'detect', // 사용자가 설치한 버전을 자동으로 선택
     },
   },
 
-  plugins: ["react", "react-refresh", "jsx-a11y", "import"],
+  plugins: ['react', 'react-refresh', 'jsx-a11y', 'import'],
   extends: [
-    "@rushstack/eslint-config/profile/web-app",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:react/jsx-runtime",
+    '@rushstack/eslint-config/profile/web-app',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:prettier/recommended',
   ],
 
   rules: {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "import/order": [
-      "error",
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'import/order': [
+      'error',
       {
         groups: [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type",
-          "unknown",
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
+          'unknown',
         ],
-        pathGroups: [],
-        "newlines-between": "always",
+        pathGroups: [
+          {
+            pattern: '{react*,react*/*}',
+            group: 'external',
+            position: 'before',
+          },
+        ],
+        'newlines-between': 'always',
         pathGroupsExcludedImportTypes: [],
         alphabetize: {
-          order: "asc",
+          order: 'asc',
         },
       },
     ],
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
   },
 };
