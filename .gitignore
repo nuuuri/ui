@@ -25,6 +25,7 @@ dist-ssr
 
 # vite cache
 .vite
+vite.config.ts.timestamp*.*
 
 # non zero install
 .pnp.*
