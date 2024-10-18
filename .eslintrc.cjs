@@ -100,6 +100,16 @@ module.exports = {
             group: 'external',
             position: 'before',
           },
+          {
+            pattern: '@components/*',
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: '@pages/*',
+            group: 'internal',
+            position: 'after',
+          },
         ],
         'newlines-between': 'always',
         pathGroupsExcludedImportTypes: [],
