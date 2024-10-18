@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainPage from '@pages';
 
 import Layout from '@pages/_layout';
+import ButtonPage from '@pages/button';
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <MainPage />,
+      },
+      {
+        path: '/button',
+        element: <ButtonPage />,
       },
     ],
   },
